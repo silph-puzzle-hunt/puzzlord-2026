@@ -4,6 +4,8 @@ from django.template.loader import render_to_string
 
 
 def send_mail_wrapper(subject, template, context, recipients):
+    pass
+    '''
     if recipients:
         mail = EmailMultiAlternatives(
             subject=settings.EMAIL_SUBJECT_PREFIX + subject,
@@ -18,3 +20,4 @@ def send_mail_wrapper(subject, template, context, recipients):
             raise RuntimeError(
                 "Unknown failure sending mail??? {} {}".format(recipients, send_res)
             )
+    '''

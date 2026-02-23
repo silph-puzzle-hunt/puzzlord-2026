@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 import datetime
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY", "FIXME_SECRET_KEY_GOES_HERE")
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -77,11 +78,12 @@ WSGI_APPLICATION = "puzzlord.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+DATABASE_URL = os.environ.get("DATABASE_URL")
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-    }
+    "default": dj_database_url.parse(
+        url=DATABASE_URL, conn_max_age=600, conn_health_checks=True
+    )
 }
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
@@ -189,17 +191,17 @@ LOGGING = {
 HUNT_REPO = "/srv/FIXME/"
 
 HUNT_TIME = datetime.datetime(
-    year=2021,
-    month=1,
-    day=15,
-    hour=17,
+    year=2026,
+    month=10,
+    day=2,
+    hour=23,
     minute=0,
     second=0,
     microsecond=0,
     tzinfo=datetime.timezone.utc,
 )
 
-SITE_PASSWORD = "FIXME_PASSWORD_GOES_HERE"
+SITE_PASSWORD = ""
 
 # Google Sheets integration for testsolving sheets
 TESTSOLVE_SHEETS_CONFIG = {
