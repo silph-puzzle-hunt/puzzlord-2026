@@ -148,43 +148,43 @@ LOGGING = {
         "django": {"format": "%(asctime)s [%(levelname)s] %(module)s\n%(message)s"},
         "puzzles": {"format": "%(asctime)s [%(levelname)s] %(message)s"},
     },
-    "handlers": {
-        "django": {
-            "level": "DEBUG",
-            "class": "logging.FileHandler",
-            "filename": "/srv/mhpuzzlord/logs/django.log",
-            "formatter": "django",
-        },
-        "puzzle": {
-            "level": "DEBUG",
-            "class": "logging.FileHandler",
-            "filename": "/srv/mhpuzzlord/logs/puzzle.log",
-            "formatter": "puzzles",
-        },
-        "request": {
-            "level": "DEBUG",
-            "class": "logging.FileHandler",
-            "filename": "/srv/mhpuzzlord/logs/request.log",
-            "formatter": "puzzles",
-        },
-    },
-    "loggers": {
-        "django": {
-            "handlers": ["django"],
-            "level": "DEBUG",
-            "propagate": True,
-        },
-        "puzzles.puzzle": {
-            "handlers": ["puzzle"],
-            "level": "DEBUG",
-            "propagate": False,
-        },
-        "puzzles.request": {
-            "handlers": ["request"],
-            "level": "DEBUG",
-            "propagate": False,
-        },
-    },
+    # "handlers": {
+    #     "django": {
+    #         "level": "DEBUG",
+    #         "class": "logging.FileHandler",
+    #         "filename": "/srv/mhpuzzlord/logs/django.log",
+    #         "formatter": "django",
+    #     },
+    #     "puzzle": {
+    #         "level": "DEBUG",
+    #         "class": "logging.FileHandler",
+    #         "filename": "/srv/mhpuzzlord/logs/puzzle.log",
+    #         "formatter": "puzzles",
+    #     },
+    #     "request": {
+    #         "level": "DEBUG",
+    #         "class": "logging.FileHandler",
+    #         "filename": "/srv/mhpuzzlord/logs/request.log",
+    #         "formatter": "puzzles",
+    #     },
+    # },
+    # "loggers": {
+    #     "django": {
+    #         "handlers": ["django"],
+    #         "level": "DEBUG",
+    #         "propagate": True,
+    #     },
+    #     "puzzles.puzzle": {
+    #         "handlers": ["puzzle"],
+    #         "level": "DEBUG",
+    #         "propagate": False,
+    #     },
+    #     "puzzles.request": {
+    #         "handlers": ["request"],
+    #         "level": "DEBUG",
+    #         "propagate": False,
+    #     },
+    # },
 }
 
 # only if you want to do postprodding
