@@ -201,7 +201,7 @@ HUNT_TIME = datetime.datetime(
     tzinfo=datetime.timezone.utc,
 )
 
-SITE_PASSWORD = ""
+SITE_PASSWORD = "FranceRoundPt2!!"
 
 # Google Sheets integration for testsolving sheets
 TESTSOLVE_SHEETS_CONFIG = {
